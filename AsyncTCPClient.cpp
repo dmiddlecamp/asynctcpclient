@@ -7,7 +7,11 @@
 // I wanted this code for the Photon, not the Electron.
 
 // This is the stack size for the thread.
+#if PLATFORM_ID==10
+const size_t ASYNCTCPCLIENT_STACK_SIZE = 4096;
+#else
 const size_t ASYNCTCPCLIENT_STACK_SIZE = 2048;
+#endif
 
 // This is how many ConnectQueueEntry objects to preallocate
 const size_t ASYNCTCPCLIENT_NUM_CONNECTQUEUEENTRY = 1;
